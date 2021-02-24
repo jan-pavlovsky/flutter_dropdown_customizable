@@ -1269,7 +1269,7 @@ class _CustomDropdownButtonState<T> extends State<CustomDropdownButton<T>>
       padding: _kMenuItemPadding.resolve(textDirection),
       selectedIndex: _selectedIndex ?? 0,
       elevation: widget.elevation,
-      theme: Theme.of(context, shadowThemeOnly: true),
+      theme: Theme.of(context),
       style: _textStyle,
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
       itemHeight: widget.itemHeight,
@@ -1334,7 +1334,7 @@ class _CustomDropdownButtonState<T> extends State<CustomDropdownButton<T>>
       widget.onChanged != null;
 
   Orientation _getOrientation(BuildContext context) {
-    Orientation result = MediaQuery.of(context, nullOk: true)?.orientation;
+    Orientation result = MediaQuery.of(context)?.orientation;
     if (result == null) {
       // If there's no MediaQuery, then use the window aspect to determine
       // orientation.
